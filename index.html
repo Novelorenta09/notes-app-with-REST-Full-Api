@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> submission | Notes App</title>
+    <!-- <link rel="stylesheet" href="styles/style.css"> -->
+    <link rel="icon" href="image-pinterest.jpg" sizes="48x48" />
+
+</head>
+<body>
+  
+    <div class="wrapper">
+        <form id="form-login" method="POST">
+             <h3>Silahkan login terlebih dulu</h3>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+            <p>username: user</p>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            <p>password: 123</p>
+
+            <div id="errorMessage" class="error-message" style=" display: none;">Username atau Password Salah! Silakan Coba Lagi</div>
+
+            <div id="loaderLogin" class="loader-login" style="display: none;">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+
+            </div> 
+            
+            <button type="submit">Login</button>
+          </form>
+    </div>
+
+   <header-notes hidden></header-notes>
+   <main hidden>
+    <article class="container">
+    <div class="jumbotron">
+        <img src="image-pinterest.jpg" alt="image-pinterest">
+        <div class="pencil" >
+     
+            <img-button-notes
+                src="icon-plus-removebg-preview.png"
+                alt="image-button"
+                id="pencilButton"
+            ></img-button-notes>
+            
+            <clue-notes id="clue"></clue-notes>
+        </div>
+    </div>
+
+
+ 
+
+   <!-- loader -->
+   <loader-notes></loader-notes>
+
+    <form action="" id="noteForm" hidden>
+        <h2> make your notes</h2>
+        <div class="form-group">
+            <label for="title">Judul</label>
+            <input type="text" name="title" id="title" required   autocomplete="off">
+        </div>
+       
+        <div class="form-group">
+            <label for="body">Teks</label>
+            <textarea name="body" id="body" cols="30" rows="10" required autocomplete="off"></textarea>
+        </div>
+     
+        <div class="form-group">
+            <button type="reset">Batal</button>
+            <button type="submit" id="tambah">Tambah</button>
+        </div>
+    </form>
+    </article>
+
+
+    <hr>
+    <h3 style="font-weight: 700; text-align: center; margin: 12px 0;">Your Note's are Awesome</h3>
+    <div class="container-daftarCatatan"> 
+     <ul class="daftarcatatan" id="daftarCatatan">
+
+    </ul> 
+    </div>
+   
+
+   </main>
+   <footer-notes hidden></footer-notes>
+
+  
+</body>
+</html>

@@ -1,0 +1,374 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+header,
+footer{
+    padding: 20px;
+    width: 100%;
+    margin: auto;
+    background-color: #81bef8;
+}
+footer{
+    text-align: center;
+}
+
+main{
+    width: 100%;
+}
+main>.container>form{
+    width: 80%;
+    padding: 10px;
+    margin: 20px auto;
+    background-color: rgb(232, 240, 250);
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px #eee;
+}
+.container>form>h2{
+    text-align: center;
+    text-transform: capitalize;
+}
+label{
+    display: block;
+    margin-top: 15px;
+}
+
+.container>form>.form-group>input,
+.container>form>.form-group>textarea{
+    padding: 10px 15px;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-top: 3px;
+    word-wrap: break-word;
+}
+.container>form>.form-group>input:focus-visible,
+.container>form>.form-group>textarea:focus-visible{
+    outline: 2px solid lightblue ;   
+}
+.form-group>button{
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.4s ease-in-out;
+}
+.form-group>button:nth-child(2){
+    background-color: green;
+    color: white;
+}
+.form-group>button:nth-child(2):hover{
+    background-color: rgb(2, 99, 2);
+}
+.form-group>button:nth-child(1){
+    background-color: red;
+    color: white;
+
+}
+.form-group>button:nth-child(1):hover{
+    background-color: rgb(206, 11, 11);
+}
+
+/* validasi error */
+.input-error,
+.textarea-error{
+    outline:  2px solid red ; 
+}
+input:invalid,
+input:required:invalid{
+    outline:  2px solid red ; 
+
+}
+
+
+
+/* style daftar catatan */
+.container-daftarCatatan>ul>li{
+    list-style: none;
+    background-color: rgb(232, 240, 250);
+    padding: 10px;
+    margin: 10px 15px;
+    border-radius: 10px;
+}
+.daftarcatatan{
+    display: grid;
+    grid-template-columns: repeat(4,2fr );
+    grid-template-rows: repeat(4,auto);
+   
+}
+
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+} 
+ .container>.jumbotron{
+    display: flex;
+    position: relative;
+} 
+ .jumbotron>img{
+    width: 450px;
+    margin:auto;
+} 
+
+
+
+.pencil{
+    position: absolute;
+    bottom: 10px;
+    right: 20%;
+}
+
+/* styling utk from login */
+.wrapper{
+    margin: 50px auto;
+    background: #81bef8;
+    width: 500px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.wrapper>form>label{
+    display: block;
+
+}
+.wrapper>form>h3{
+    text-align: center;
+    text-transform: capitalize;
+}
+.wrapper>form{
+    width: 80%;
+    margin: auto;
+}
+.wrapper>form>input[type='text'],
+.wrapper>form>input[type='password']
+{
+    border: none;
+    padding: 6px 5px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+
+}
+.wrapper>form>input:focus-visible{
+    outline: 2px solid salmon ;  
+    transition: all 0.1s ease-in-out; 
+}
+.wrapper>form>button{
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    background: rgb(5, 160, 5);
+    color: white;
+    transition: all 0.3s ease-in-out;
+    font-size: 15px;
+    margin-top: 20px;
+}
+.wrapper>form>button:hover{
+    background: rgb(2, 109, 2);
+
+}
+.wrapper>form>p{
+    margin-top: 5px;
+    font-size: 12px;
+    color: red;
+    text-align: right;
+}
+
+/* styling error message login */
+.error-message{
+  position: fixed;
+  top: 30px;
+  padding: 15px;
+  border-radius: 5px;
+  color: white;
+  z-index: 1000;
+  display: none;
+  animation: slideInRight 0.5s, fadeOut 0.5s 2s forwards;
+  background-color:red;
+}
+@keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+
+  /* sytling utk loader login */
+  
+
+.loader-login {
+    display: inline;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+ }
+.loader-login div {
+    position: absolute;
+    top: 33px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: salmon;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+ .loader-login div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+
+.loader-login div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.loader-login div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.loader-login div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+.loader-login div:nth-child(5) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(24px, 0);
+    }
+}   
+
+
+
+
+/* media query */
+@media (min-width:300px) and (max-width: 457px){
+    .daftarcatatan{
+        grid-template-columns: 1fr;
+    }
+   main>form{
+    width: 50%;
+    margin: auto;
+   }
+   main{
+    width: 100%;
+
+   }
+.jumbotron>img{
+    width: 300px;
+    margin:auto;
+} 
+   header,footer{
+    margin: 0;
+    width: 100%;
+    padding: 10px;
+   }
+
+   .container{
+    grid-template-columns: 1fr;
+    display: grid;
+    
+    }  
+    .pencil{
+        position: absolute;
+        bottom: 10px;
+        right: 10%;
+    }
+  
+}
+
+@media (min-width:458px) and (max-width: 600px){
+    .daftarcatatan{
+        grid-template-columns: 1fr 1fr;
+       
+    }
+    main>form{
+        width: 80%;
+       }
+    .container{
+       grid-template-columns: 1fr;
+    } 
+    
+}
+@media (min-width:601px) and (max-width: 768px){
+    .daftarcatatan{
+        grid-template-columns: 1fr 1fr 1fr;
+       
+    }
+    main>form{
+        width: 60%;
+       }
+       
+    .container{
+        grid-template-columns: 1fr;
+    } 
+
+}
+@media (min-width:769px) and (max-width: 900px){
+    .daftarcatatan{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+       
+    }
+    main>form{
+        width: 50%;
+       }
+    .jumbotron>img{
+        width: 350px;
+        margin:auto;
+    } 
+    
+}
+@media (min-width:901px) and (max-width: 1200px){
+    .daftarcatatan{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+       
+    }
+    .jumbotron>img{
+        width: 300px;
+        margin:auto;
+    } 
+}
